@@ -1,0 +1,12 @@
+<div class="alert alert-danger" *ngIf="error">
+    <p>{{error}}</p>
+</div>
+<div *ngIf="isFetching" style="text-align:center;">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+<app-issue-item *ngFor="let issue of issues" [issue]="issue"></app-issue-item>
+<div style="text-align: center;">
+    <p *ngIf="issues.length === 0 && !isFetching">
+        No items to show
+    </p>
+</div>

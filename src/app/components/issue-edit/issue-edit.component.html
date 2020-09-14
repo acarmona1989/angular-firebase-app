@@ -1,0 +1,21 @@
+<div class="row">
+    <form [formGroup]="issueForm" (ngSubmit)="onSubmit()">
+        <div class="form-group newIssuePanel" id="issue-data">
+            <div class="form-group">
+                <input type="text" id="title" class="form-control" placeholder="Title" formControlName="title">
+                <!-- <span class="help-block" 
+                    *ngIf="!issueForm.get('title').valid && issueForm.get('title').touched">
+                        Please enter a title!</span> -->
+            </div>
+            <div class="form-group">
+                <textarea id="description" formControlName="description" class="form-control" rows="3"
+                    placeholder="Leave a description"></textarea>
+            </div>
+            <div style="text-align: right;">
+                <button type="submit" class="btn btn-primary" [disabled]="!issueForm.valid">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- <button class="btn btn-default" (click)="fillForm()">Fill form</button> -->

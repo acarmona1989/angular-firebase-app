@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-12">
+        <a class="list-group-item clearfix">
+            <div class="col-xs-10" style="height: 114px;">
+                <a [routerLink]="['/issues',issue.id]">
+                    <h4 class="list-group-item-heading">{{issue.title}}</h4>
+                </a>
+                <p class="list-group-item-text">Created: {{issue.dateCreated | timeToStamp | date: 'dd-MM-yyyy'}}</p>
+                <p class="list-group-item-text">{{issue.description | shortenDescription: 240 }}</p>
+            </div>
+            <div class="col-xs-2">
+                <!-- Single button -->
+                <div class="btn-group" appDropdown>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a [routerLink]="['/issues',issue.id,'edit']">Edit</a></li>
+                        <li><a style="cursor: pointer;" (click)="onDelete()">Delete</a></li>
+                    </ul>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<br>

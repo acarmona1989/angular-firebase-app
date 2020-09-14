@@ -1,0 +1,7 @@
+.newIssuePanel{
+    border-radius: 4px 4px 0 0;
+    border-color: #ddd;
+    border-width: 1px;
+    padding: 15px;
+    border-style: solid;
+}

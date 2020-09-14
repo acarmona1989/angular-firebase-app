@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                    <a routerLink="/issues">Home</a></li>
+                <li role="presentation" routerLinkActive="active">
+                    <a routerLink="/issues/new">New issue</a></li>
+                <li role="presentation" class="dropdown" appDropdown *ngIf="authService.isLoggedIn">
+                    <a class="dropdown-toggle" data-toggle="dropdown" 
+                    style="cursor: pointer;">Profile
+                    <span class="caret"></span></a>
+                    <ul  class="dropdown-menu" style="margin-top: 16px;">
+                        <li style="padding-left: 16px; padding-right: 16px;">
+                            Signed in as 
+                            <strong>{{authService.userData?.displayName}}</strong>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li class="nav-item" 
+                            style="text-align: center;"
+                            role="presentation" 
+                            routerLinkActive="active">
+                            <button class="btn btn-default" style="cursor: pointer;" (click)="authService.signOut()">Sign out</button>
+                        </li>
+                    </ul>
+                </li>
+                <li role="presentation" routerLinkActive="active" *ngIf="!authService.isLoggedIn">
+                    <a routerLink="/sign-in">Sign in</a>
+                </li>
+                
+            </ul>
+        </nav>
+        <h3 class="text-muted">
+            Bitacora</h3>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="alert alert-danger" *ngIf="error">
+    <p>{{error}}</p>
+</div>
+<div *ngIf="isLoading" style="text-align:center;">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+<div class="form-signin" *ngIf="!isLoading">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" #email required>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" #userPassword
+        required>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" (click)="onSignin(email.value,userPassword.value)">Signin</button>
+    <div class="forgotPassword">
+        <span routerLink="/forgot-password">Forgot Password?</span>
+    </div>
+    <div class="redirectToLogin">
+        <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+    </div>
+</div>
